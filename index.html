@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-    <title>Clock</title>
+    <title>光阴逝水</title>
     <style>
       :root {
         --n: 12;
@@ -178,10 +178,14 @@
       <div class="secondBar"></div>
     </div>
 
+    <!-- 秒针走动的音频 -->
+    <audio src="./da.mp3" id="sound"></audio>
+
     <script>
       let secondBar = document.querySelector(".secondBar");
       let minuteBar = document.querySelector(".minuteBar");
       let hourBar = document.querySelector(".hourBar");
+      let sound = document.querySelector("#sound");
 
       /**
        * 更新时钟函数
@@ -198,6 +202,7 @@
         secondBar.style.transform = `rotate(${secondsDeg - 90}deg)`;
         minuteBar.style.transform = `rotate(${minutesDeg - 90}deg)`;
         hourBar.style.transform = `rotate(${hoursDeg - 90}deg)`;
+        sound.play()
       }
 
       // 1秒钟更新一回
