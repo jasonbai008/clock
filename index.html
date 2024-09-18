@@ -186,8 +186,7 @@
             const now = new Date();
             let seconds = now.getSeconds();
             let minutes = now.getMinutes();
-            let hours = now.getHours();
-            if (hours > 12) hours -= 12;
+            let hours = now.getHours() % 12;
             const secondsDeg = (seconds / 60) * 360;
             const minutesDeg = (minutes / 60) * 360;
             const hoursDeg = ((hours * 60 + minutes) / (12 * 60)) * 360;
