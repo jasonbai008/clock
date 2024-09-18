@@ -114,11 +114,40 @@
             /* 把旋转中心，放到左侧中心位置 */
             transform-origin: left center;
         }
+
+        .minuteBar {
+            position: absolute;
+            top: calc(50% - 3px);
+            left: 50%;
+            width: 100px;
+            height: 6px;
+            border-radius: 3px;
+            background: #1abc9c;
+            /* 开头往回旋转90度，回到0度 */
+            transform: rotate(-90deg);
+            /* 把旋转中心，放到左侧中心位置 */
+            transform-origin: left center;
+        }
+
+        .hourBar {
+            position: absolute;
+            top: calc(50% - 4px);
+            left: 50%;
+            width: 80px;
+            height: 8px;
+            border-radius: 4px;
+            background: #3498db;
+            /* 开头往回旋转90度，回到0度 */
+            transform: rotate(-90deg);
+            /* 把旋转中心，放到左侧中心位置 */
+            transform-origin: left center;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <!-- 12个刻度 -->
         <div class="child"></div>
         <div class="child"></div>
         <div class="child"></div>
@@ -131,23 +160,37 @@
         <div class="child"></div>
         <div class="child"></div>
         <div class="child"></div>
+        <!-- 中心点 -->
         <div class="center"></div>
+        <!-- 时针 -->
+        <div class="hourBar"></div>
+        <!-- 分针 -->
+        <div class="minuteBar"></div>
+        <!-- 秒针 -->
         <div class="secondBar"></div>
     </div>
 
     <script>
-        // 秒针
         let secondBar = document.querySelector(".secondBar");
+        let minuteBar = document.querySelector(".minuteBar");
+        let hourBar = document.querySelector(".hourBar");
 
         /**
         * 更新时钟函数
         * 此函数用于每秒更新时钟的秒针位置
         */
         function updateClock() {
-            const date = new Date();
-            const seconds = date.getSeconds();
+            const now = new Date();
+            let seconds = now.getSeconds();
+            let minutes = now.getMinutes();
+            let hours = now.getHours();
+            if (hours > 12) hours -= 12;
             const secondsDeg = (seconds / 60) * 360;
+            const minutesDeg = (minutes / 60) * 360;
+            const hoursDeg = ((hours * 60 + minutes) / (12 * 60)) * 360;
             secondBar.style.transform = `rotate(${secondsDeg - 90}deg)`;
+            minuteBar.style.transform = `rotate(${minutesDeg - 90}deg)`;
+            hourBar.style.transform = `rotate(${hoursDeg - 90}deg)`;
         }
 
         // 1秒钟更新一回
