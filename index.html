@@ -97,6 +97,61 @@
             transform: rotate(calc(var(--angle) * 11)) translate(var(--radius));
         }
 
+        .child span {
+            position: absolute;
+            left: -18px;
+            top: -8px;
+            font-size: 14px;
+        }
+
+        .child:nth-child(1) span {
+            transform: rotate(calc(var(--angle) * 0));
+        }
+
+        .child:nth-child(2) span {
+            transform: rotate(calc(var(--angle) * -1));
+        }
+
+        .child:nth-child(3) span {
+            transform: rotate(calc(var(--angle) * -2));
+        }
+
+        .child:nth-child(4) span {
+            transform: rotate(calc(var(--angle) * -3));
+        }
+
+        .child:nth-child(5) span {
+            transform: rotate(calc(var(--angle) * -4));
+        }
+
+        .child:nth-child(6) span {
+            transform: rotate(calc(var(--angle) * -5));
+        }
+
+        .child:nth-child(7) span {
+            transform: rotate(calc(var(--angle) * -6));
+        }
+
+        .child:nth-child(8) span {
+            transform: rotate(calc(var(--angle) * -7));
+        }
+
+        .child:nth-child(9) span {
+            transform: rotate(calc(var(--angle) * -8));
+        }
+
+        .child:nth-child(10) span {
+            transform: rotate(calc(var(--angle) * -9));
+        }
+
+        .child:nth-child(11) span {
+            transform: rotate(calc(var(--angle) * -10));
+        }
+
+        .child:nth-child(12) span {
+            transform: rotate(calc(var(--angle) * -11));
+        }
+
         .center {
             width: 16px;
             height: 16px;
@@ -159,18 +214,18 @@
 <body>
     <div class="container">
         <!-- 12个刻度 -->
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
+        <div class="child"> <span>3</span> </div>
+        <div class="child"> <span>4</span> </div>
+        <div class="child"> <span>5</span> </div>
+        <div class="child"> <span>6</span> </div>
+        <div class="child"> <span>7</span> </div>
+        <div class="child"> <span>8</span> </div>
+        <div class="child"> <span>9</span> </div>
+        <div class="child"> <span>10</span> </div>
+        <div class="child"> <span>11</span> </div>
+        <div class="child"> <span>12</span> </div>
+        <div class="child"> <span>1</span> </div>
+        <div class="child"> <span>2</span> </div>
         <!-- 中心点 -->
         <div class="center"></div>
         <!-- 时针 -->
