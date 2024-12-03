@@ -269,7 +269,7 @@
 
         document.addEventListener("dblclick", (e) => {
             const backgroundImage = new Image();
-            backgroundImage.src = 'https://api.vvhan.com/api/bing?rand=sj&size=1920&v=' + Math.random();
+            backgroundImage.src = 'https://bing.img.run/rand_m.php?v=' + Math.random();
             // 图片加载完了，才替换背景图片，避免白屏
             backgroundImage.onload = () => document.body.style.backgroundImage = `url(${backgroundImage.src})`;
         });
